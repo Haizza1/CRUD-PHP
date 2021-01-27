@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UserController@index');
+Route::post('users', 'UserController@store')->name('users.store');
+Route::put('users/{user}/update', 'UserController@update')->name('users.update');
+Route::delete('users/{user}/destroy', 'UserController@destroy')->name('users.destroy');
